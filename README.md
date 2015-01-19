@@ -19,16 +19,16 @@ An R script called run_analysis.R that does the following:
 
 2. From the same directory where you placed run_analysis.R run the following commands to download the source data in to a data subdirectory and unzip it:
 
-dataUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download.file(dataUrl,destfile="./Dataset.zip",method="curl")
-unzip(zipfile="./Dataset.zip",exdir="./data")
+	  dataUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+	  download.file(dataUrl,destfile="./Dataset.zip",method="curl")
+	  unzip(zipfile="./Dataset.zip",exdir="./data")
 
 3. Run run_analysis.R  to generate a new file tidy.txt in your working directory.
 
 
 ## run_analysis.R steps explained
 
-* Read all the test, training, subject, activity and features files:
+* Read the contents of all the test, training, subject, activity and features files:
 	X_train.txt
 	y_train.txt
 	subject_train.txt
@@ -49,7 +49,7 @@ unzip(zipfile="./Dataset.zip",exdir="./data")
 
 ### Additional Information
 The tidy.txt data set can be read back in to R with the following command:
- data <- read.table("tidt.txt", header = TRUE)
+	 data <- read.table("tidy.txt", header = TRUE)
 
 You can find additional information about the variables, data and transformations in the CodeBook.MD file.
 
