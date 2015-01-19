@@ -19,13 +19,11 @@ An R script called run_analysis.R that does the following:
 
 2. From the same directory where you placed run_analysis.R run the following commands to download the source data in to a data subdirectory and unzip it:
 
-if(!file.exists("./data")){
-        dir.create("./data")}
 dataUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download.file(dataUrl,destfile="./data/Dataset.zip",method="curl")
-unzip(zipfile="./data/Dataset.zip",exdir="./data")
+download.file(dataUrl,destfile="./Dataset.zip",method="curl")
+unzip(zipfile="./Dataset.zip",exdir="./data")
 
-3. Run run_analysis.R  to generate a new file tiny_data.txt in your working directory.
+3. Run run_analysis.R  to generate a new file tidy.txt in your working directory.
 
 
 ## run_analysis.R steps explained
@@ -39,11 +37,13 @@ unzip(zipfile="./data/Dataset.zip",exdir="./data")
 	activity_labels.txt
 	features.txt
 
-* Combine the files to a data frame called all_combined in the form of subjects, labels, the rest of the data.
+* Combine the files to a data frame called all_combined.
 
 * Apply the features and activity labels
 
 * Extract the mean and standard deviation data in to a new data frame called combinedAverages
+
+* Change the column labels to make them more descriptive.
 
 * Write the new tidy set into a text file called tidy.txt in the current working directory
 
