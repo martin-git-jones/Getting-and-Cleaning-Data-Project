@@ -19,9 +19,10 @@ An R script called run_analysis.R that does the following:
 
 2. From the same directory where you placed run_analysis.R run the following commands to download the source data in to a data subdirectory and unzip it:
 
-	  dataUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-	  download.file(dataUrl,destfile="./Dataset.zip",method="curl")
-	  unzip(zipfile="./Dataset.zip",exdir="./data")
+```
+          dataUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+          download.file(dataUrl,destfile="./Dataset.zip",method="curl")
+          unzip(zipfile="./Dataset.zip",exdir="./data") ```
 
 3. Run run_analysis.R  to generate a new file tidy.txt in your working directory.
 

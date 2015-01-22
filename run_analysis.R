@@ -29,7 +29,7 @@
 #  Read features labels
   features <- read.table("./UCI HAR Dataset/features.txt")
 
-#  Combine the training and test data 
+#  Combine the training, test and subject data 
   x_combined <- rbind(x_train, x_test)
   y_combined <- rbind(y_train, y_test)
   s_combined <- rbind(subject_train, subject_test)
@@ -47,9 +47,11 @@
   names(activities) <- c('act_id', 'act_name')
   y_combined[, 1] = activities[y_combined[, 1], 2]
 
+# Apply labels to columns of the combined data sets
   names(y_combined) <- "Activity"
   names(s_combined) <- "Subject"
 
+# Create a single data set combining x,y and subject data
   all_combined <- cbind(s_combined, y_combined, x_combined)
 
 #  Create a tidy data set with the average of each variable for each activity and each subject
